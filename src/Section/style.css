@@ -1,0 +1,22 @@
+.section__title {
+    margin: 0;
+    background-color: white;
+    font-weight: bold;
+  }
+  
+  .section__header {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    padding: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .section__header {
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+  }
+  
