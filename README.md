@@ -4,6 +4,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![og:image](https://github.com/MieczyslawFrontDev/to-do-list-react/blob/main/src/Images/share.png?raw=true)
+
 ## Demo
 
 https://mieczyslawfrontdev.github.io/to-do-list-react/
