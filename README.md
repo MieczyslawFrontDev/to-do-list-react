@@ -1,8 +1,21 @@
-# to-do-list-react
+# To-do-list-react
 
-## description
+## Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Demo
+
+https://mieczyslawfrontdev.github.io/to-do-list-react/
+
+## Technologies
+
+1. HTML
+2. CSS (Grid, Flex, MediaQ)
+3. BEM
+4. JS
+5. React
+6. ES6+
 
 ## Available Scripts
 
