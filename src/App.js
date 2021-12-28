@@ -7,17 +7,20 @@ import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import "./index.css";
 
-const tasks = [
-  { id: 1, content: "Zrobić szkolenie YouCode", done: true },
-  { id: 2, content: "Zostać programistą JS", done: true },
-];
-
 function App() {
   const [hideDone, setHideDone] = useState(false);
+  const [tasks, setTasks] = useState([
+    { id: 1, content: "Zrobić szkolenie YouCode", done: true },
+    { id: 2, content: "Zostać programistą JS", done: true },
+  ]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
+
+  const removeTask = (id) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id))
+  }
 
   return (
     <Container>
@@ -36,7 +39,10 @@ function App() {
               toggleHideDone={toggleHideDone}
             />
           }
-          body={<Tasks tasks={tasks} hideDone={hideDone} />}
+          body={<Tasks 
+            tasks={tasks}
+            hideDone={hideDone}
+            removeTask={removeTask} />}
         />
       </>
     </Container>
