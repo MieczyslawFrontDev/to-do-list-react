@@ -11,7 +11,7 @@ const tasks = [
   { id: 2, content: "Zostać programistą JS", done: true },
 ];
 
-const hideDoneTask = false;
+const hideDone = false;
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
         />
         <Section
           title="Lista zadań"
-          headerContent={<Buttons tasks={tasks} hideDoneTasks={hideDoneTask} />}
-          body={<Tasks tasks={tasks} hideDoneTasks={hideDoneTask} />}
+          headerContent={<Buttons tasks={tasks} hideDone={hideDone} />}
+          body={<Tasks tasks={tasks} hideDone={hideDone} />}
         />
       </>
     </Container>
