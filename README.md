@@ -17,7 +17,9 @@ https://mieczyslawfrontdev.github.io/to-do-list-react/
 3. BEM
 4. JS
 5. React
-6. ES6+
+6. Webpack
+7. Babel
+8. ES6+
 
 ## Available Scripts
 
