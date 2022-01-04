@@ -10,8 +10,8 @@ import "./index.css";
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState([
-    { id: 1, content: "Zrobić szkolenie YouCode", done: true },
-    { id: 2, content: "Zostać programistą JS", done: true },
+    { id: 1, content: "Zrobić szkolenie YouCode", done: false },
+    { id: 2, content: "Zostać programistą JS", done: false },
   ]);
 
   const toggleHideDone = () => {
