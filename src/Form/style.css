@@ -21,6 +21,7 @@
     transform: scale(1.05);
     transition: 0.5s;
     background-color: hsl(180, 100%, 30%);
+    cursor: pointer;
   }
   
   .form__button:active {
