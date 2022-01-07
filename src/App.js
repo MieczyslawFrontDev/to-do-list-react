@@ -70,7 +70,7 @@ function App() {
       <>
         <Section
           title="Dodaj nowe zadanie"
-          body={<Form addNewTask={addNewTask} />}
+          body={<Form title="Dodaj zadanie" addNewTask={addNewTask} />}
         />
         <Section
           title="Lista zadań"
