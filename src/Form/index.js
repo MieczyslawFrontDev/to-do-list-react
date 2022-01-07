@@ -24,7 +24,7 @@ const Form = ({ title, addNewTask }) => {
         className="form__field"
         placeholder="Co jest do zrobienia?"
       />
-      <button className="form__button">{title}</button>
+      <button className="form__button">Dodaj zadanie</button>
     </form>
   );
 };
