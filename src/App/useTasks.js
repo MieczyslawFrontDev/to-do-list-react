@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react";
 
 export const useTasks = () => {
+  const getInitialTasks = () => {
+    const tasksFromLocaleStorage = localStorage.getItem("tasks");
 
+    return tasksFromLocaleStorage ? JSON.parse(tasksFromLocaleStorage) : [];
+  };
+
+  const [tasks, setTasks] = useState(getInitialTasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   const removeTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
@@ -39,18 +49,6 @@ export const useTasks = () => {
       },
     ]);
   };
-
-  const getInitialTasks = () => {
-    const tasksFromLocaleStorage = localStorage.getItem("tasks");
-
-    return tasksFromLocaleStorage ? JSON.parse(tasksFromLocaleStorage) : [];
-  };
-
-  const [tasks, setTasks] = useState(getInitialTasks);
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
 
   return { tasks, removeTask, toggleTaskDone, setAllDone, addNewTask };
 };
