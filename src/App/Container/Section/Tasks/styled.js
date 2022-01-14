@@ -7,7 +7,7 @@ export const List = styled.ul`
   background-color: ${({ theme }) => theme.color.white};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-   padding-top: 0;
+    padding-top: 0;
   }
 `;
 

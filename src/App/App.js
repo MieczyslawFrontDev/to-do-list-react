@@ -5,9 +5,10 @@ import Section from "./Container/Section";
 import Form from "./Container/Section/Form";
 import Tasks from "./Container/Section/Tasks";
 import Buttons from "./Container/Section/Buttons";
-import { useTasks } from "./useTasks";
+import { useTasks} from "./useTasks";
 
 function App() {
+
   const [hideDone, setHideDone] = useState(false);
 
   const toggleHideDone = () => {
@@ -21,7 +22,6 @@ function App() {
     setAllDone,
     addNewTask
   } = useTasks();
-  
 
   return (
     <Wrapper>
