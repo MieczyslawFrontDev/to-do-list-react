@@ -16,10 +16,12 @@ https://mieczyslawfrontdev.github.io/to-do-list-react/
 2. CSS (Grid, Flex, MediaQ)
 3. BEM
 4. JS
-5. React
-6. Webpack
-7. Babel
-8. ES6+
+5. React (Async/Await, Axios)
+6. Custom hooks
+7. Styled-Components
+8. Webpack
+9. Babel
+10. ES6+
 
 ## Available Scripts
 
