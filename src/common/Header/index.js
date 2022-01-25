@@ -1,8 +1,8 @@
 import { Title } from "./styled";
 
-const Header = ({ title }) => (
+const Header = () => (
   <header>
-    <Title>{title}</Title>
+    <Title>Lista zadań</Title>
   </header>
 );
 
