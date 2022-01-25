@@ -13,5 +13,5 @@ export const useLocaleStorageState = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  return [tasks, setTasks]
+  return [ tasks, setTasks ]
 };
