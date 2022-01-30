@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getTasksFromLocaleStorage } from "./tasksFromLocaleStorage";
 
 const tasksSlice = createSlice({
   name: "tasks",
   initialState: {
-    tasks: [],
+    tasks: getTasksFromLocaleStorage(),
     hideDone: false,
   },
 
@@ -27,6 +28,10 @@ const tasksSlice = createSlice({
         task.done = true;
       }
     },
+    axiosExampleTasks: () => {},
+    setTasks: (state, { payload: tasks }) => {
+      state.tasks = tasks;
+    },
   },
 });
 
@@ -36,14 +41,16 @@ export const {
   toggleTaskDone,
   removeTask,
   setAllDone,
+  axiosExampleTasks,
+  setTasks,
 } = tasksSlice.actions;
 
-
-const selectTasksState = state => state.tasks;
+const selectTasksState = (state) => state.tasks;
 
 export const selectTasks = (state) => selectTasksState(state).tasks;
 export const selectHideDone = (state) => selectTasksState(state).hideDone;
-export const selectIsEveryTaskDone = (state) => selectTasks(state).every(({ done }) => done);
+export const selectIsEveryTaskDone = (state) =>
+  selectTasks(state).every(({ done }) => done);
 export const selectAreTasksToDo = (state) => selectTasks(state).length > 0;
 
 export default tasksSlice.reducer;
