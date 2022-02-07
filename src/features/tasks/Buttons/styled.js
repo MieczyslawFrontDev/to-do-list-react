@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
-
+  display: flex;  
+  
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 10px;
+    padding: 0;
+    margin-right: 0;
   }
 `;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.color.teal};
   border: none;
   transition: 0.5s;
+  padding: 20px;
 
   &:hover {
     filter: brightness(110%);
@@ -23,5 +25,9 @@ export const Button = styled.button`
 
   &:disabled {
     color: ${({ theme }) => theme.color.silver};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+   padding: 10px;
   }
 `;
