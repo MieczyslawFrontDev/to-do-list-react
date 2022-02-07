@@ -1,9 +1,13 @@
 import { Title } from "./styled";
 
-const Header = () => (
-  <header>
-    <Title>Lista zadań</Title>
-  </header>
-);
+const Header = ({ title }) => {
+
+  return (  
+    
+    <header>
+      <Title>{title}</Title>
+    </header>
+  );
+}
 
 export default Header;
