@@ -21,7 +21,7 @@ function TasksPage() {
           body={<Form />} 
         />
         <Section
-          title="Dodaj nowe zadanie" 
+          title="Wyszukiwarka" 
           body={<Search />} 
         />
         <Section 
