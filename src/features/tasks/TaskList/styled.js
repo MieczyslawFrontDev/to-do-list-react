@@ -38,6 +38,7 @@ export const Button = styled.button`
     toggleDone &&
     css`
       background-color: ${({ theme }) => theme.color.green};
+      text-align: center;
 
       &:hover {
         transform: scale(1.1);
@@ -52,6 +53,7 @@ export const Button = styled.button`
     remove &&
     css`
       background-color: ${({ theme }) => theme.color.red};
+
 
       &:hover {
         transform: scale(1.1);
