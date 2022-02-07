@@ -1,13 +1,14 @@
-import { Header, Title} from "./styled";
+import { StyledSection, Header, Title, Body } from "./styled";
 
-const Section = ({ body, headerContent }) => (
-  <section>
+const Section = ({ title, button, body, headerContent }) => (
+  <StyledSection>
     <Header>
-      <Title>Lista zadań</Title>
+      <Title>{title}</Title>
+      {button}
       {headerContent}
     </Header>
-    {body}
-  </section>
+    <Body>{body}</Body>
+  </StyledSection>
 );
 
 export default Section;
