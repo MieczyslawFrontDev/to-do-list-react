@@ -6,10 +6,8 @@ import {
   selectIsEveryTaskDone,
   selectAreTasksToDo,
   selectHideDone,
-  axiosExampleTasks,
-
 } from "../taskSlice";
-import { Wrapper, Button } from "./styled";
+import { Wrapper, StyledButton } from "./styled";
 
 const Buttons = () => {
   const hideDone = useSelector(selectHideDone);
@@ -20,21 +18,18 @@ const Buttons = () => {
   return (
     
     <Wrapper>
-      <Button onClick={() => dispatch(axiosExampleTasks())}>
-        Pobierz przykładowe zadania
-      </Button>
+
       {areTasksToDo && (
-        <>
-          
-          <Button onClick={() => dispatch(toggleHideDone())}>
+        <>   
+          <StyledButton onClick={() => dispatch(toggleHideDone())}>
             {hideDone ? "Pokaż" : "Ukryj"} ukończone
-          </Button>
-          <Button
+          </StyledButton>
+          <StyledButton
             disabled={isEveryTaskDone}
             onClick={() => dispatch(setAllDone())}
           >
             Ukończ wszystkie
-          </Button>
+          </StyledButton>
         </>
       )}
     </Wrapper>
