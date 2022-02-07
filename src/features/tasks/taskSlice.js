@@ -6,6 +6,7 @@ const tasksSlice = createSlice({
   initialState: {
     tasks: getTasksFromLocaleStorage(),
     hideDone: false,
+    loading: false,
   },
 
   reducers: {
@@ -16,11 +17,11 @@ const tasksSlice = createSlice({
       state.hideDone = !state.hideDone;
     },
     toggleTaskDone: ({ tasks }, { payload: taskId }) => {
-      const index = tasks.findIndex((task) => task.id === taskId);
+      const index = tasks.findIndex(({ id }) => id === taskId);
       tasks[index].done = !tasks[index].done;
     },
     removeTask: ({ tasks }, { payload: taskId }) => {
-      const index = tasks.findIndex((task) => task.id === taskId);
+      const index = tasks.findIndex(({ id }) => id === taskId);
       tasks.splice(index, 1);
     },
     setAllDone: ({ tasks }) => {
@@ -28,10 +29,14 @@ const tasksSlice = createSlice({
         task.done = true;
       }
     },
-    axiosExampleTasks: () => {},
+    axiosExampleTasks: (state) => {
+      state.loading = true;
+    },
     setTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
-    },
+      state.loading = false;
+
+       },
   },
 });
 
@@ -43,14 +48,30 @@ export const {
   setAllDone,
   axiosExampleTasks,
   setTasks,
+  axiosExampleTasksSuccess
 } = tasksSlice.actions;
 
 const selectTasksState = (state) => state.tasks;
 
 export const selectTasks = (state) => selectTasksState(state).tasks;
 export const selectHideDone = (state) => selectTasksState(state).hideDone;
-export const selectIsEveryTaskDone = (state) =>
-  selectTasks(state).every(({ done }) => done);
+export const selectIsEveryTaskDone = (state) => selectTasks(state).every(({ done }) => done);
 export const selectAreTasksToDo = (state) => selectTasks(state).length > 0;
+
+export const getTaskById = (state, taskId) => selectTasks(state).find(({ id }) => id === taskId);
+
+export const selectTasksByQuery = (state, query) => {
+  const tasks = selectTasks(state);
+
+  if(!query || query.trim() === ""){
+
+    return tasks;
+  } 
+  
+  return selectTasks(state).filter(({ content }) => content.toUpperCase().includes(query.trim().toUpperCase()));
+}
+
+export const selectLoading = (state) => selectTasksState(state).loading;
+
 
 export default tasksSlice.reducer;
