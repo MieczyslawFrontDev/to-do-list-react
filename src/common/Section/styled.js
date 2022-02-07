@@ -1,21 +1,29 @@
 import styled from "styled-components";
 
+export const StyledSection = styled.section`
+  background-color: ${({ theme }) => theme.color.white};
+`;
+
 export const Header = styled.header`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
-  background-color: white;
   border-bottom: 1px solid lightgray;
-  padding: 20px;
-
+    
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: 1fr;
-    grid-gap: 10px;
+    text-align: center;
   }
 `;
 
 export const Title = styled.h2`
   margin: 0;
-  background-color: ${({ theme }) => theme.color.white};
+  padding: 20px;
   font-weight: bold;
 `;
+
+export const Body = styled.div`
+padding: 20px;
+`
+
+
