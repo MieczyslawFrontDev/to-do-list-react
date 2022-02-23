@@ -16,7 +16,9 @@ https://mieczyslawfrontdev.github.io/to-do-list-react/
 2. CSS (Grid, Flex, MediaQ)
 3. BEM
 4. JS
-5. React ( Custom hooks,  Styled-Components )
+5. React ( Custom hooks,  Styled-Components, Axios )
+6. React Router
+7. Redux (Toolkit, Saga)
 8. Webpack
 9. Babel
 10. ES6+
