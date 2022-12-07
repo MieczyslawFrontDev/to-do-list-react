@@ -33,7 +33,6 @@ export const Button = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 2px;
-  justify-self: center;
 
   ${({ toggleDone }) =>
     toggleDone &&
