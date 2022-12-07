@@ -34,31 +34,24 @@ export const Button = styled.button`
   height: 30px;
   border-radius: 2px;
 
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    border-radius: 2px;
+    filter: brightness(120%);
+    cursor: pointer;
+  }
+
   ${({ toggleDone }) =>
     toggleDone &&
     css`
       background-color: ${({ theme }) => theme.color.green};
-
-      &:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
-        border-radius: 2px;
-        filter: brightness(120%);
-        cursor: pointer;
-      }
     `}
 
   ${({ remove }) =>
     remove &&
     css`
       background-color: ${({ theme }) => theme.color.red};
-
-      &:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
-        filter: brightness(120%);
-        cursor: pointer;
-      }
     `}
 `;
 
