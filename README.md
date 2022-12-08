@@ -3,11 +3,9 @@
 ## Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ![animation](https://github.com/MieczyslawFrontDev/to-do-list-react/blob/main/animation.gif?raw=true)
 
 ## Demo
-
 https://mieczyslawfrontdev.github.io/to-do-list-react/
 
 ## Technologies
