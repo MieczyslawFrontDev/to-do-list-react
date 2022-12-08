@@ -1,11 +1,18 @@
-import { call, delay, put, select, takeEvery, takeLatest } from "redux-saga/effects";
+import {
+  call,
+  delay,
+  put,
+  select,
+  takeEvery,
+  takeLatest,
+} from "redux-saga/effects";
 import { getExampleTasks } from "./getExampleTasks";
 import { saveTasksInLocaleStorage } from "./tasksFromLocaleStorage";
-import { axiosExampleTasks, selectTasks, setTasks } from "./taskSlice";
+import { axiosExampleTasks, selectTasks, setTasks } from "./tasksSlice";
 
 function* axiosExampleTasksWorker() {
   try {
-    yield delay(1000)
+    yield delay(1000);
     const exampleTasks = yield call(getExampleTasks);
     yield put(setTasks(exampleTasks));
   } catch (error) {
@@ -13,15 +20,12 @@ function* axiosExampleTasksWorker() {
   }
 }
 
-function* saveTasksInLocaleStorageWorker(){
-    const tasks = yield select(selectTasks);
-    yield call(saveTasksInLocaleStorage, tasks)
+function* saveTasksInLocaleStorageWorker() {
+  const tasks = yield select(selectTasks);
+  yield call(saveTasksInLocaleStorage, tasks);
 }
-
 
 export function* tasksSaga() {
   yield takeLatest(axiosExampleTasks.type, axiosExampleTasksWorker);
-  yield takeEvery("*", saveTasksInLocaleStorageWorker)
+  yield takeEvery("*", saveTasksInLocaleStorageWorker);
 }
-
-
