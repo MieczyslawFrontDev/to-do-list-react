@@ -6,7 +6,7 @@ import {
   selectIsEveryTaskDone,
   selectAreTasksToDo,
   selectHideDone,
-} from "../taskSlice";
+} from "../tasksSlice";
 import { Wrapper, StyledButton } from "./styled";
 
 const Buttons = () => {
@@ -16,11 +16,9 @@ const Buttons = () => {
   const dispatch = useDispatch();
 
   return (
-    
     <Wrapper>
-
       {areTasksToDo && (
-        <>   
+        <>
           <StyledButton onClick={() => dispatch(toggleHideDone())}>
             {hideDone ? "Pokaż" : "Ukryj"} ukończone
           </StyledButton>
