@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "../Input";
+import { Input } from "../../../common/Input";
 import {
   useQueryParameter,
   useReplaceQueryParameter,
@@ -7,7 +7,7 @@ import {
 import searchQueryParamName from "../searchQueryParamName";
 import { Wrapper } from "./styled";
 
-export default () => {
+export const Search = () => {
   const query = useQueryParameter(searchQueryParamName);
   const onInputChange = useReplaceQueryParameter(searchQueryParamName);
 
