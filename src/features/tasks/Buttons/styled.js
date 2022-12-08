@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;  
-  
+  display: flex;
+  justify-content: center;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    display: grid;
-    grid-template-columns: 1fr;
     padding: 0;
     margin-right: 0;
   }
@@ -28,6 +27,6 @@ export const StyledButton = styled.button`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-   padding: 10px;
+    padding: 10px;
   }
 `;
