@@ -1,11 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
-import { List, Item, Button, Content, StyledLink } from "./styled";
+import {
+  List,
+  Item,
+  Button,
+  Content,
+  StyledLink,
+} from "../../../common/List/styled";
 import {
   toggleTaskDone,
   removeTask,
   selectHideDone,
   selectTasksByQuery,
-} from "../taskSlice";
+} from "../tasksSlice";
 import { useLocation } from "react-router-dom";
 import searchQueryParamName from "../searchQueryParamName";
 
